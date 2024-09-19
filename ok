@@ -1,0 +1,117 @@
+# Surfboard 小白配置 制作 by Orz-3 TG频道：t.me/Orzmini 2023/11/20
+[General]
+wifi-assist = false
+internet-test-url = http://cp.cloudflare.com/generate_204
+proxy-test-url = http://cp.cloudflare.com/generate_204
+test-timeout = 5
+tls-provider = openssl
+geoip-maxmind-url = https://raw.githubusercontent.com/JMVoid/ipip2mmdb/release/Country.mmdb
+ipv6 = false
+allow-wifi-access = true
+wifi-access-http-port = 7899
+wifi-access-socks5-port = 7890
+http-listen = 127.0.0.1:7899
+socks5-listen = 127.0.0.1:7890
+skip-proxy = 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, localhost, *.local, passenger.t3go.cn
+exclude-simple-hostnames = true
+network-framework = false
+dns-server = 8.8.8.8,system
+read-etc-hosts = true
+loglevel = notify
+show-error-page-for-reject = true
+always-real-ip = msftconnecttest.com, msftncsi.com, *.msftconnecttest.com, *.msftncsi.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, *.battlenet.com.cn, *.battlenet.com, *.blzstatic.cn, *.battle.net
+force-http-engine-hosts = *.ott.cibntv.net,123.59.31.1,119.18.193.135,122.14.246.33,175.102.178.52
+[Replica]
+hide-apple-request = 0
+hide-crash-reporter-request = 1
+hide-udp = 1
+[Proxy]
+国内直连 = direct
+广告拦截1 = reject
+广告拦截2 = reject
+广告拦截3 = reject
+广告拦截4 = reject
+广告拦截5 = reject
+广告拦截6 = reject
+广告拦截7 = reject
+广告拦截8 = reject
+广告拦截9 = reject
+广告拦截0 = reject
+广告拦截 = reject
+[Proxy Group]
+订阅链接 = url-test, include-all-proxies=1, update-interval=0, policy-path=https://mysub.cc/subscribe/11778/wr7WyV6LHJ/surge/, hidden=true
+openai节点 = select, include-other-group=订阅链接, update-interval=0, policy-regex-filter=(?=.*(专线3x-新加坡[1-4]|专线3x-日本[1-4]|日本(0[6-9]|1[0-3])|TW01|JP01|US01|专线3x-台湾[1-2]|专线3x-美国[1-4]|专线3x-马来西亚|美|US|(?i)States|American))^((?!(港|台|日|韩|新)).)*$, url=http://www.gstatic.com/generate_204, hidden=false
+新加坡 = select, include-other-group=订阅链接, update-interval=0, policy-regex-filter=(?=.*(新|狮|獅|SG|(?i)Singapore))^((?!(港|台|日|韩|美)).)*$, url=http://www.gstatic.com/generate_204, hidden=false
+日本 = select, include-other-group=订阅链接, update-interval=0, policy-regex-filter=(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$, url=http://www.gstatic.com/generate_204, hidden=false
+香港 = select, include-other-group=订阅链接, update-interval=0, policy-regex-filter=(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|美)).)*$, url=http://www.gstatic.com/generate_204, hidden=false
+台湾 = select, include-other-group=订阅链接, update-interval=0, policy-regex-filter=(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$, url=http://www.gstatic.com/generate_204, hidden=false
+韩国 = select, include-other-group=订阅链接, update-interval=0, policy-regex-filter=(?=.*(韩|韓|朝|KR|(?i)Korea))^((?!(港|台|日|新|美)).)*$, url=http://www.gstatic.com/generate_204, hidden=false
+美国 = select, include-other-group=订阅链接, update-interval=0, policy-regex-filter=(?=.*(美|US|(?i)States|American))^((?!(港|台|日|韩|新)).)*$, url=http://www.gstatic.com/generate_204, hidden=false
+全球加速 = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国
+谷歌服务 = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国
+港台番剧 = select, 国内直连, 香港, 台湾
+国际媒体 = select, 全球加速, 香港, 台湾, 日本, 韩国, 新加坡, 美国
+电报代理 = select, 新加坡, 国内直连
+黑白名单 = select, 全球加速, 国内直连
+香港测速 = url-test, include-other-group=订阅链接, update-interval=0, policy-regex-filter=(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|美)).)*$, url=http://www.gstatic.com/generate_204, hidden=false
+台湾测速 = url-test, include-other-group=订阅链接, update-interval=0, policy-regex-filter=(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$, url=http://www.gstatic.com/generate_204, hidden=false
+日本测速 = url-test, include-other-group=订阅链接, update-interval=0, policy-regex-filter=(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$, url=http://www.gstatic.com/generate_204, hidden=false
+韩国测速 = url-test, include-other-group=订阅链接, update-interval=0, policy-regex-filter=(?=.*(韩|韓|朝|KR|(?i)Korea))^((?!(港|台|日|新|美)).)*$, url=http://www.gstatic.com/generate_204, hidden=false
+新加坡测速 = url-test, include-other-group=订阅链接, update-interval=0, policy-regex-filter=(?=.*(新|狮|獅|SG|(?i)Singapore))^((?!(港|台|日|韩|美)).)*$, url=http://www.gstatic.com/generate_204, hidden=false
+美国测速 = url-test, include-other-group=订阅链接, update-interval=0, policy-regex-filter=(?=.*(美|US|(?i)States|American))^((?!(港|台|日|韩|新)).)*$, url=http://www.gstatic.com/generate_204, hidden=false
+[Rule]
+PROCESS-NAME,v2ray,国内直连
+PROCESS-NAME,ss-local,国内直连
+PROCESS-NAME,UUBooster,国内直连
+PROCESS-NAME,aria2c,国内直连
+PROCESS-NAME,fdm,国内直连
+PROCESS-NAME,Folx,国内直连
+PROCESS-NAME,NetTransport,国内直连
+PROCESS-NAME,Thunder,国内直连
+PROCESS-NAME,Transmission,国内直连
+PROCESS-NAME,uTorrent,国内直连
+PROCESS-NAME,WebTorrent,国内直连
+PROCESS-NAME,WebTorrent Helper,国内直连
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Direct/Direct.list,国内直连
+RULE-SET,https://raw.githubusercontent.com/gitfvp/SSR-Clash-QuantumultX-ChatGPT/main/rules/OpenAI.list,openai节点
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AdvertisingLite/AdvertisingLite.list,广告拦截1
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Privacy/Privacy.list,广告拦截2
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Hijacking/Hijacking.list,广告拦截3
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ZhihuAds/ZhihuAds.list,广告拦截4
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/BlockHttpDNS/BlockHttpDNS.list,广告拦截5
+RULE-SET,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list,广告拦截6
+RULE-SET,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list,广告拦截7
+RULE-SET,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list,广告拦截8
+RULE-SET,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list,广告拦截9
+RULE-SET,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list,广告拦截0
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GlobalMedia/GlobalMedia.list,国际媒体
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaMedia/ChinaMedia.list,港台番剧
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleVoice/GoogleVoice.list,美国
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Google/Google.list,谷歌服务
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list,电报代理
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global.list,全球加速
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/China/China.list,国内直连
+RULE-SET,LAN,国内直连
+GEOIP,CN,国内直连
+FINAL,黑白名单,dns-failed
+[Host]
+mtalk.google.com = 108.177.125.188
+dl.google.com = server:119.29.29.29
+dl.l.google.com = server:119.29.29.29
+update.googleapis.com = server:119.29.29.29
+amplifi.lan = server:syslib 
+router.synology.com = server:syslib
+sila.razer.com = server:syslib 
+router.asus.com = server:syslib 
+routerlogin.net = server:syslib 
+orbilogin.com = server:syslib 
+www.LinksysSmartWiFi.com = server:syslib 
+LinksysSmartWiFi.com = server:syslib
+myrouter.local = server:syslib 
+www.miwifi.com = server:syslib 
+miwifi.com = server:syslib 
+mediarouter.home = server:syslib 
+tplogin.cn = server:syslib 
+tplinklogin.net = server:syslib 
+melogin.cn = server:syslib 
+falogin.cn = server:syslib
